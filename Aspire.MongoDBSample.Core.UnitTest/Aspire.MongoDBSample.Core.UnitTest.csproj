@@ -12,12 +12,25 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="NSubstitute" Version="5.1.0" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aspire.MongoDBSample.Core\Aspire.MongoDBSample.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\00.git\aspire-mongodb-sample\Aspire.MongoDBSample.Core.UnitTest\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\00.git\aspire-mongodb-sample\Aspire.MongoDBSample.Core.UnitTest\.editorconfig" />
   </ItemGroup>
 
 </Project>

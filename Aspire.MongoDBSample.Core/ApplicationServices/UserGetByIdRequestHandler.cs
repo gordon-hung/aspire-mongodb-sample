@@ -2,7 +2,7 @@
 using Aspire.MongoDBSample.Core.ApplicationServices;
 
 namespace Aspire.MongoDBSample.Core.ApplicationServices;
-internal class UserGetByIdService(
+internal class UserGetByIdRequestHandler(
 	IUserRepository repository) : IRequestHandler<UserGetByIdRequest, UserInfoResponse?>
 {
 	public async Task<UserInfoResponse?> Handle(UserGetByIdRequest request, CancellationToken cancellationToken)

@@ -2,7 +2,7 @@
 using Aspire.MongoDBSample.Core.ApplicationServices;
 
 namespace Aspire.MongoDBSample.Core.ApplicationServices;
-internal class UserAddService(
+internal class UserAddRequestHandler(
 	IUserIdGenerator generator,
 	IPasswordHasher hasher,
 	IUserRepository repository) : IRequestHandler<UserAddRequest, string>
