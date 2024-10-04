@@ -1,0 +1,6 @@
+@Aspire.MongoDBSample.RESTful_HostAddress = http://localhost:5174
+
+GET {{Aspire.MongoDBSample.RESTful_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.MongoDB.Driver" Version="8.2.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aspire.MongoDBSample.Core\Aspire.MongoDBSample.Core.csproj" />
+    <ProjectReference Include="..\Aspire.MongoDBSample.Repositories\Aspire.MongoDBSample.Repositories.csproj" />
+    <ProjectReference Include="..\Aspire.MongoDBSample.ServiceDefaults\Aspire.MongoDBSample.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>
