@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aspire.MongoDBSample.RESTful.Controllers;
+
 [Route("api/[controller]")]
 [ApiController]
 public class UsersController : ControllerBase
@@ -20,6 +21,7 @@ public class UsersController : ControllerBase
 	{
 		return ValueTask.FromResult(userIdGenerator.NewId());
 	}
+
 	/// <summary>
 	/// Users the add asynchronous.
 	/// </summary>

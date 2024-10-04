@@ -1,10 +1,12 @@
 ﻿using Aspire.MongoDBSample.Core;
 
 namespace Aspire.MongoDBSample.Repositories;
+
 internal class UserIdGenerator(
 	TimeProvider timeProvider) : IUserIdGenerator
 {
 	private static object instance = new object();
+
 	public string NewId()
 	{
 		lock (instance)

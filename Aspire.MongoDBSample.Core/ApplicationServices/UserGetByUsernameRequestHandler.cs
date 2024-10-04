@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Aspire.MongoDBSample.Core.ApplicationServices;
 
 namespace Aspire.MongoDBSample.Core.ApplicationServices;
+
 internal class UserGetByUsernameRequestHandler(
 	IUserRepository repository) : IRequestHandler<UserGetByUsernameRequest, UserInfoResponse?>
 {

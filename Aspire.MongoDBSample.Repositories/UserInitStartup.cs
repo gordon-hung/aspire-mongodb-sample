@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 
 namespace Aspire.MongoDBSample.Repositories;
+
 public sealed class UserInitStartup(IUserRepository repository) : IHostedService
 {
 	public async Task StartAsync(CancellationToken cancellationToken)
@@ -13,4 +14,3 @@ public sealed class UserInitStartup(IUserRepository repository) : IHostedService
 
 	public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 }
-

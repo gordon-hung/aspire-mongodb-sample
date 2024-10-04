@@ -1,9 +1,11 @@
 ﻿using Aspire.MongoDBSample.Core;
 
 namespace Aspire.MongoDBSample.Repositories;
+
 internal class PasswordHasher : IPasswordHasher
 {
 	private const int saltRounds = 10;
+
 	public string HashPassword(string plainPassword)
 	{
 		// 生成隨機的鹽並哈希密碼

@@ -2,6 +2,7 @@
 using NSubstitute;
 
 namespace Aspire.MongoDBSample.Core.UnitTest.ApplicationServices;
+
 public class UserAddRequestHandlerUnitTest
 {
 	[Fact]
@@ -10,7 +11,6 @@ public class UserAddRequestHandlerUnitTest
 		var fakeGenerator = Substitute.For<IUserIdGenerator>();
 		var fakeHasher = Substitute.For<IPasswordHasher>();
 		var fakeRepository = Substitute.For<IUserRepository>();
-
 
 		var request = new UserAddRequest(
 			Username: "Gordon_Hung",

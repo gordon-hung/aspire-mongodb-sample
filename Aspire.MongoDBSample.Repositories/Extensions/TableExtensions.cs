@@ -1,4 +1,5 @@
 ﻿namespace Aspire.MongoDBSample.Repositories.Extensions;
+
 public static class TableExtensions
 {
 	public static string GetTableName(this Type type)

@@ -1,12 +1,13 @@
 ﻿using Aspire.MongoDBSample.Core;
-using Aspire.MongoDBSample.Repositories.Models;
-using Aspire.MongoDBSample.Repositories.Extensions;
-using MongoDB.Driver;
 using Aspire.MongoDBSample.Core.Enums;
 using Aspire.MongoDBSample.Core.Models;
+using Aspire.MongoDBSample.Repositories.Extensions;
+using Aspire.MongoDBSample.Repositories.Models;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
 
 namespace Aspire.MongoDBSample.Repositories;
+
 internal class UserRepository(
 	ILogger<UserRepository> logger,
 	TimeProvider timeProvider,
@@ -31,6 +32,7 @@ internal class UserRepository(
 			cancellationToken: cancellationToken)
 			.ConfigureAwait(false);
 	}
+
 	public async ValueTask<UserInfo?> GetByIdAsync(string id, CancellationToken cancellationToken = default)
 	{
 		var collection = GetCollection();
@@ -53,6 +55,7 @@ internal class UserRepository(
 				user.CreatedAt,
 				user.UpdateAt);
 	}
+
 	public async ValueTask<UserInfo?> GetByUsernameAsync(string username, CancellationToken cancellationToken = default)
 	{
 		var collection = GetCollection();
@@ -75,6 +78,7 @@ internal class UserRepository(
 				user.CreatedAt,
 				user.UpdateAt);
 	}
+
 	public async ValueTask UpdatePasswordAsync(string id, string hashedPassword, CancellationToken cancellationToken = default)
 	{
 		var collection = GetCollection();
@@ -114,11 +118,6 @@ internal class UserRepository(
 		await Task.WhenAll(tasks).ConfigureAwait(false);
 	}
 
-	private IMongoCollection<User> GetCollection()
-		=> client
-		.GetDatabase("sample")
-		.GetCollection<User>(typeof(User).GetTableName());
-
 	private static Task<string> Index_UniqueAsync(IMongoCollection<User> collection, CancellationToken cancellationToken = default)
 	{
 		var index = Builders<User>.IndexKeys
@@ -135,6 +134,9 @@ internal class UserRepository(
 			model: createIndexModel,
 			cancellationToken: cancellationToken);
 	}
+
+	private IMongoCollection<User> GetCollection()
+			=> client
+		.GetDatabase("sample")
+		.GetCollection<User>(typeof(User).GetTableName());
 }
-
-
